@@ -1,19 +1,5 @@
-let string = `.skin * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.skin *::before, *::after {
-    box-sizing: border-box;
-}
-
-body {
+let string = `body {
     background: #ffe600;
-}
-
-.cheek img{
-    display: none;
 }
 
 .skin {
@@ -24,6 +10,18 @@ body {
     left: 50%;
     top: 50%;
     transform: translateY(-50%) translateX(-50%);
+}
+
+@media(max-width: 500px) and (min-width: 400px){
+    .skin{
+      font-size: 80px;
+    }
+}
+
+@media(max-width: 400px){
+    .skin{
+        font-size: 60px;
+    }
 }
 
 .eye {
@@ -194,8 +192,6 @@ body {
     transform: rotateY(180deg);
     transform-origin: 0 0; 
 }
-
-
 `
 
 const demo1 = document.querySelector('#demo1')
