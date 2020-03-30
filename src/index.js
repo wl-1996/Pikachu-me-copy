@@ -3,7 +3,7 @@ let string = `body {
 }
 
 .skin {
-    position: absolute;
+    position: fixed;
     font-size: 100px;
     width: 4.2em; 
     height: 2.35em; 
