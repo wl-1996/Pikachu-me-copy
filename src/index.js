@@ -192,10 +192,10 @@ let string = `body {
     transform: rotateY(180deg);
     transform-origin: 0 0; 
 }
-`
+`;
 
-const demo1 = document.querySelector('#demo1')
-const demo2 = document.querySelector('#demo2')
+const demo1 = document.querySelector('#demo1');
+const demo2 = document.querySelector('#demo2');
 
 const player = {
     timer: undefined,
@@ -209,48 +209,48 @@ const player = {
         '#btnFast': 'fast',
     },
     init() {
-        player.bindEvents()
-        player.play()
+        player.bindEvents();
+        player.play();
     },
     bindEvents() {
         for (let key in player.events) {
             if (player.events.hasOwnProperty(key)) {
-                const value = player.events[key]
-                document.querySelector(key).onclick = player[value]
+                const value = player.events[key];
+                document.querySelector(key).onclick = player[value];
             }
         }
     },
     run() {
         player.n += 1;
         if (player.n === string.length) {
-            window.clearInterval(player.timer)
+            window.clearInterval(player.timer);
         }
-        demo1.innerText = string.substr(0, player.n)
-        demo2.innerHTML = string.substr(0, player.n)
-        demo1.scrollTo(0, 3951)
+        demo1.innerText = string.substr(0, player.n);
+        demo2.innerHTML = string.substr(0, player.n);
+        demo1.scrollTo(0, 3951);
     },
     play() {
-        player.timer = setInterval(player.run, player.interval)
+        player.timer = setInterval(player.run, player.interval);
     },
     pause() {
-        window.clearInterval(player.timer)
+        window.clearInterval(player.timer);
     },
     slow() {
-        player.pause()
-        player.interval = 200
-        player.play()
+        player.pause();
+        player.interval = 200;
+        player.play();
     },
     normal() {
-        player.pause()
-        player.interval = 100
-        player.play()
+        player.pause();
+        player.interval = 100;
+        player.play();
     },
     fast() {
-        player.pause()
-        player.interval = 0
-        player.play()
+        player.pause();
+        player.interval = 0;
+        player.play();
     }
-}
+};
 
-player.init()
+player.init();
 
